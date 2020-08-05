@@ -1,0 +1,21 @@
+@import '~bpk-mixins';
+
+$color-light: #8f90a0;
+
+
+.info-table {
+  box-shadow: none;
+  .arrow{
+    width: 3.5rem !important;
+    height: 1.5rem !important;
+  }
+}
+
+.info-grey {
+  color: $color-light;
+}
+
+.card-footer-row {
+  display: flex;
+  justify-content: space-between;
+}
