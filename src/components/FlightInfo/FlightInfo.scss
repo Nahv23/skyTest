@@ -1,21 +1,40 @@
 @import '~bpk-mixins';
 
 $color-light: #8f90a0;
+$color-grey-light: #8f90a0ba;
 
+.spinner{
+  display: flex;
+  justify-content: center;
+  margin-top: 50%;
+}
 
-.info-table {
-  box-shadow: none;
-  .arrow{
-    width: 3.5rem !important;
-    height: 1.5rem !important;
+.card{
+  margin-bottom: 1rem;
+  box-shadow: 0px 1px 3px 1px rgba(37, 32, 31, 0.3);
+  
+  .info-table {
+    box-shadow: none;
+    .arrow{
+      width: 3.5rem !important;
+      height: 1.5rem !important;
+    }
   }
 }
 
-.info-grey {
-  color: $color-light;
-}
+
 
 .card-footer-row {
   display: flex;
   justify-content: space-between;
+  
+  .itinerary-price{
+    font-size: x-large;
+  }
+  .info-grey {
+    color: $color-light;
+  }
+  .info-grey-light{
+    color: $color-grey-light;
+  }
 }

@@ -23,6 +23,7 @@
     "bpk-component-button": "^3.2.50",
     "bpk-component-card": "^2.1.0",
     "bpk-component-icon": "^8.2.10",
+    "bpk-component-spinner": "^3.1.0",
     "bpk-component-table": "^2.0.71",
     "bpk-component-text": "^2.0.21",
     "bpk-mixins": "^19.1.39",
