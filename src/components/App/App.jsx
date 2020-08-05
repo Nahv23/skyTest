@@ -1,7 +1,10 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import React from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import BpkText from 'bpk-component-text';
 
 import Header from '../Header';
+import FlightInfo from '../FlightInfo';
 
 import STYLES from './App.scss';
 
@@ -11,8 +14,8 @@ const App = () => (
   <div className={getClassName('App')}>
     <Header />
     <main className={getClassName('App__main')}>
-      <BpkText tagName="p">Over to you...</BpkText>
-      {/* TODO: Add a component to display results here */}
+      {/* <BpkText tagName="p">Over to you...</BpkText> */}
+      <FlightInfo />
     </main>
   </div>
 );
