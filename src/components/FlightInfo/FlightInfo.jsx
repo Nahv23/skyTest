@@ -87,11 +87,11 @@ const FlightInfo = () => {
                   </div>
                   <br />
                   <div className={getClassName('stops')}>
-                     {getInfoLegs(itinerary.legs[0], 0).stops === 0 ? 
-                    <BpkText className={getClassName('without-stops')}>Direct</BpkText>
-                    :
-                    <BpkText className={getClassName('with-stops')}> {`${getInfoLegs(itinerary.legs[0], 0).stops}`} Stop</BpkText>
-                  }
+                    {getInfoLegs(itinerary.legs[0], 0).stops === 0 ?
+                      <BpkText className={getClassName('without-stops')}>Direct</BpkText>
+                      :
+                      <BpkText className={getClassName('with-stops')}> {`${getInfoLegs(itinerary.legs[0], 0).stops}`} Stop</BpkText>
+                    }
                   </div>
                 </BpkTableCell>
               </BpkTableRow>
@@ -122,11 +122,11 @@ const FlightInfo = () => {
                   </div>
                   <br />
                   <div className={getClassName('stops')}>
-                    {getInfoLegs(itinerary.legs[1], 0).stops === 0 ? 
-                    <BpkText className={getClassName('without-stops')}>Direct</BpkText>
-                    :
-                    <BpkText className={getClassName('with-stops')}> {`${getInfoLegs(itinerary.legs[1], 0).stops}`} Stop</BpkText>
-                  }
+                    {getInfoLegs(itinerary.legs[1], 0).stops === 0 ?
+                      <BpkText className={getClassName('without-stops')}>Direct</BpkText>
+                      :
+                      <BpkText className={getClassName('with-stops')}> {`${getInfoLegs(itinerary.legs[1], 0).stops}`} Stop</BpkText>
+                    }
                   </div>
                 </BpkTableCell>
               </BpkTableRow>
