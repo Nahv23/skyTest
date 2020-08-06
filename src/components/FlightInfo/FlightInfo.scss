@@ -3,42 +3,59 @@
 $color-light: #8f90a0;
 $color-grey-light: #8f90a0ba;
 
-.spinner{
+.spinner {
   display: flex;
   justify-content: center;
   margin-top: 50%;
 }
 
-.card{
-  margin-bottom: 1rem;
+.card {
+  margin-bottom: 1.5rem;
   box-shadow: 0px 1px 3px 1px rgba(37, 32, 31, 0.3);
-  
+
   .info-table {
     box-shadow: none;
-    .arrow{
+    .departure-time-info {
+      font-size: larger;
+    }
+    .arrow {
       width: 3.5rem !important;
       height: 1.5rem !important;
     }
-    .without-stops{
-      color: green;
-    }
-    .with-stops{
-      color: red;
+    .col-table-5{
+      float: right;
+      .without-stops {
+        color: #4ea798;
+      }
+      .with-stops {
+        color: red;
+        white-space: nowrap;
+      }
     }
   }
 }
 
-
+.duration-info {
+  float: right;
+  color: $color-light;
+  margin-bottom: 0.3rem;
+}
 
 .card-footer-row {
   display: flex;
   justify-content: space-between;
-  
-  .itinerary-price{
-    font-size: x-large;
+
+  .itinerary-price {
+    font-size: xxx-large;;
   }
-  .info-grey-light{
+  .info-grey-light {
     color: $color-grey-light;
+  }
+  .button-select {
+    max-height: 3rem;
+    min-width: 135px;
+    font-size: x-large;
+    font-weight: 500;
   }
 }
 
