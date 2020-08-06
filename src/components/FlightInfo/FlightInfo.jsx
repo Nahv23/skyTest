@@ -51,8 +51,6 @@ const FlightInfo = () => {
       return `${hours}h ${minutes}`;
     }
 
-    // let infoNeeded = legObjectInfoSelected.key;
-
     return legObjectInfoSelected;
   };
 
@@ -88,7 +86,11 @@ const FlightInfo = () => {
                     {`${getInfoLegs(itinerary.legs[0], 1)}`}
                   </div>
                   <div>
-                    Direct?
+                    {getInfoLegs(itinerary.legs[0], 0).stops === 0 ? 
+                    <BpkText className={getClassName('without-stops')}> Direct</BpkText>
+                    :
+                    <BpkText className={getClassName('with-stops')}> {`${getInfoLegs(itinerary.legs[0], 0).stops}`} Stop </BpkText>
+                  }
                   </div>
                 </BpkTableCell>
               </BpkTableRow>
@@ -118,7 +120,11 @@ const FlightInfo = () => {
                     {`${getInfoLegs(itinerary.legs[1], 1)}`}
                   </div>
                   <div>
-                    Direct?
+                    {getInfoLegs(itinerary.legs[1], 0).stops === 0 ? 
+                    <BpkText className={getClassName('without-stops')}> Direct</BpkText>
+                    :
+                    <BpkText className={getClassName('with-stops')}> {`${getInfoLegs(itinerary.legs[1], 0).stops}`} Stop </BpkText>
+                  }
                   </div>
                 </BpkTableCell>
               </BpkTableRow>
