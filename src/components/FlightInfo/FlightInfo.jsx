@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { BpkExtraLargeSpinner, SPINNER_TYPES } from 'bpk-component-spinner';
 import LongArrowRightIconSm from 'bpk-component-icon/sm/long-arrow-right';
 import { withAlignment } from 'bpk-component-icon';
@@ -29,6 +29,7 @@ const FlightInfo = () => {
   const [dataFlight, setDataFlight] = useState(null);
   let content = '';
 
+
   useEffect(() => {
     // eslint-disable-next-line no-undef
     fetch('./flights.json')
@@ -42,6 +43,15 @@ const FlightInfo = () => {
       });
   }, [setDataFlight]);
 
+  let getInfoLegs = (legID) => {
+
+
+    const legObjectInfoSelected = dataFlight.legs[parseInt(legID.split("_")[1] - 1)];
+    // let infoNeeded = legObjectInfoSelected.key;
+
+    return legObjectInfoSelected;
+  };
+
   if (dataFlight !== null && dataFlight.itineraries.length > 0) {
     content = dataFlight.itineraries.map((itinerary, idx) => {
       return (
@@ -54,19 +64,19 @@ const FlightInfo = () => {
                 </BpkTableCell>
                 <BpkTableCell>
                   <div>
-                    Time-depart
+                    {`${getInfoLegs(itinerary.legs[0], 0).departure_time.split('T')[1]}`}
                   </div>
                   <div className={getClassName('info-grey')}>
-                    airport
+                    {`${getInfoLegs(itinerary.legs[0]).departure_airport}`}
                   </div>
                 </BpkTableCell>
                 <BpkTableCell> <AlignedArrow fill={colors.colorSkyGrayTint03} className={getClassName('arrow')} /> </BpkTableCell>
                 <BpkTableCell>
                   <div>
-                    Time-arrival
+                    {`${getInfoLegs(itinerary.legs[0]).arrival_time.split('T')[1]}`}
                   </div>
                   <div className={getClassName('info-grey')}>
-                    airport
+                    {`${getInfoLegs(itinerary.legs[0]).arrival_airport}`}
                   </div>
                 </BpkTableCell>
                 <BpkTableCell>
@@ -84,19 +94,19 @@ const FlightInfo = () => {
                 </BpkTableCell>
                 <BpkTableCell>
                   <div>
-                    Time-depart
+                    {`${getInfoLegs(itinerary.legs[1]).departure_time.split('T')[1]}`}
                   </div>
                   <div className={getClassName('info-grey')}>
-                    airport
+                    {`${getInfoLegs(itinerary.legs[1]).departure_airport}`}
                   </div>
                 </BpkTableCell>
                 <BpkTableCell> <AlignedArrow fill={colors.colorSkyGrayTint03} className={getClassName('arrow')} /> </BpkTableCell>
                 <BpkTableCell>
                   <div>
-                    Time-arrival
+                    {`${getInfoLegs(itinerary.legs[1]).arrival_time.split('T')[1]}`}
                   </div>
                   <div className={getClassName('info-grey')}>
-                    airport
+                    {`${getInfoLegs(itinerary.legs[1]).arrival_airport}`}
                   </div>
                 </BpkTableCell>
                 <BpkTableCell>

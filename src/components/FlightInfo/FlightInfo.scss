@@ -31,10 +31,11 @@ $color-grey-light: #8f90a0ba;
   .itinerary-price{
     font-size: x-large;
   }
-  .info-grey {
-    color: $color-light;
-  }
   .info-grey-light{
     color: $color-grey-light;
   }
+}
+
+.info-grey {
+  color: $color-light;
 }
